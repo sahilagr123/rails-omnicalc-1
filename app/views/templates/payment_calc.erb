@@ -1,0 +1,40 @@
+    <h1>
+  Payment Results
+</h1>
+
+<dl>
+  <dt>
+    APR
+  </dt>
+  <dd>
+    <% formatted_percentage = sprintf("%.4f%%", @apr)%>
+    <%= formatted_percentage %>
+  </dd>
+
+  <dt>
+    Number of years
+  </dt>
+  <dd>
+    <%= @years %>
+  </dd>
+
+  <dt>
+    Principal
+  </dt>
+  <dd>
+    <% formatted_pv = @pv.to_fs(:currency) %>
+    <%= formatted_pv %>
+  </dd>
+
+  <dt>
+    Payment
+  </dt>
+  <dd>
+    <% formatted_amount = @payment.to_fs(:currency) %>
+    <%= formatted_amount %>
+  </dd>
+</dl>
+
+<a href="/payment/new">
+  Calculate another payment
+</a>
